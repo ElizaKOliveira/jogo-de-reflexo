@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jogo de Reflexo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Montserrat&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    background-image: url('imagens/fundo2.jpg');
+  }
+</style>
+<body>
+
+  <div id="tela-inicial">
+    <h2 style="font-size: 40px; margin-bottom: 80px;">Jogo de Reflexo</h2>
+    <label for="dificuldade" style="margin-bottom: 60px; margin-top: -40px;">Escolha a dificuldade:</label>
+    <select style="margin-bottom: 40px;" id="dificuldade">
+      <option value="3">Fácil (3 rodadas)</option>
+      <option value="5">Médio (5 rodadas)</option>
+      <option value="10">Difícil (10 rodadas)</option>
+    </select>
+    <button class="btn2" onclick="iniciarJogo()">Iniciar Jogo</button>
+    <a href="index.html" style="font-weight: 50px;" class="link-voltar">← Voltar</a>
+  </div>
+
+
+  <div id="jogo-container"></div>
+
+
+  <div id="tela-fim">
+    <p id="mensagem-fim"></p>
+    <button class="btn2" style="color:black; font-weight: bold;" onclick="location.reload()">Jogar Novamente</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

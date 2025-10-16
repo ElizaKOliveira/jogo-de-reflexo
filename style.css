@@ -1,0 +1,274 @@
+body {
+  margin: 0;
+  background-image: url('imagens/fundo.jpg');
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+ }
+
+h2 {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 450;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+.bbh-sans-bartle-regular {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-mont {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1 {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 500;
+}
+
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.login-box {
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px 30px;
+  width: 90%;
+  max-width: 430px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.login-box h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn2 {
+  font-family: "Montserrat", sans-serif;
+  width: 75%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.btn2:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 70%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff; 
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+
+.input-group label {
+    width: 40%;
+    position: absolute;
+    top: 10px; 
+    left: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    pointer-events: none; 
+    transition: .5s; 
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -15px; 
+    font-size: 0.8em;
+    
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu .btn {
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.mensagem-erro {
+  color: red;
+  margin-top: 10px;
+}
+
+.mensagem-sucesso {
+  color: green;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000;
+}
+
+.link-voltar {
+  display: block;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+  font-weight: bold;
+}
+
+.link-voltar:hover {
+  transform: translateY(-2px);
+}
+
+
+#tela-inicial {
+  text-align: center;
+  padding-top: 60px;
+}
+
+
+
+label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#botao-reflexo {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+#tela-inicial label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#dificuldade {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin: 10px 0 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#tela-inicial button {
+  padding: 10px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+#jogo-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+#tela-fim {
+  display: none;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 20px;
+  white-space: pre-line;
+}
+
+#tela-fim button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#mensagem-fim {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 450;
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+

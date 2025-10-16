@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recuperar Senha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Montserrat&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Recuperar Senha</h2>
+    <form onsubmit="return recuperarSenha()">
+      <div class="input-group">
+          <input type="email" id="recuperarEmail" required />
+          <label style="width: 60%;"for="email">Digite seu email</label>
+      </div>
+      
+      <button type="submit" class="btn" id="btnRecuperar">Enviar</button>
+      <p id="mensagemRecuperar" class="mensagem-sucesso"></p>
+    </form>
+    <a href="index.html" class="link-voltar">← Voltar</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
