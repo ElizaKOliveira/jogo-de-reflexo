@@ -233,16 +233,6 @@ label {
   border: 1px solid #ccc;
 }
 
-#tela-inicial button {
-  padding: 10px 24px;
-  font-size: 18px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-}
-
 #jogo-container {
   position: relative;
   width: 100vw;
