@@ -262,3 +262,17 @@ label {
   text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
 }
 
+@media (max-width: 480px) {
+  .login-box, #tela-inicial, #tela-fim {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .btn, .btn2 {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
