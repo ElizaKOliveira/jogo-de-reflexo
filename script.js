@@ -8,17 +8,34 @@ let velocidadeX = 0;
 let velocidadeY = 0;
 let animationId = null;
 
+let melhorTempoTotal = localStorage.getItem('melhorTempoTotal');
+melhorTempoTotal = melhorTempoTotal ? parseInt(melhorTempoTotal) : Infinity;
+
+document.getElementById("maior-tempo").textContent = 
+  melhorTempoTotal === Infinity 
+    ? "Melhor tempo: ainda não jogado" 
+    : `Melhor tempo: ${melhorTempoTotal} ms`;
+
+
+document.getElementById("btn-placar").addEventListener("click", function() {
+  const placar = document.getElementById("placar");
+  placar.style.display = placar.style.display === "none" ? "block" : "none";
+});
+
+
 function iniciarJogo() {
   const select = document.getElementById("dificuldade");
-  const valor = parseInt(select.value);
-
+  const valor = parseInt(select.value); 
 
   if (valor === 3) {
-    config = { size: 80, minDelay: 300, maxDelay: 2500 };
+    config = { size: 80, minDelay: 500, maxDelay: 3500 }; 
+    iconesDoModo = ["imagens/icon.png"]; 
   } else if (valor === 5) {
     config = { size: 70, minDelay: 100, maxDelay: 1500 };
+    iconesDoModo = ["imagens/icon.png", "imagens/icon2.png"]; 
   } else if (valor === 10) {
-    config = { size: 60, minDelay: 50, maxDelay: 500 };
+    config = { size: 69, minDelay: 50, maxDelay: 500 }; 
+    iconesDoModo = ["imagens/icon.png", "imagens/icon2.png", "imagens/icon3.png", "imagens/icon4.png"]; 
   }
 
   rodadasTotais = valor;
@@ -51,10 +68,11 @@ function proximaRodada() {
 
 function criarBotaoAleatorio() {
   const container = document.getElementById("jogo-container");
-  
   const botao = document.createElement("img");
   botao.id = "botao-reflexo";
-  botao.src = "imagens/icon.png"; 
+  const indiceAleatorio = Math.floor(Math.random() * iconesDoModo.length);
+  botao.src = iconesDoModo[indiceAleatorio];
+  
   botao.alt = "Alvo";
 
   botao.style.width = config.size + "px";
@@ -65,7 +83,6 @@ function criarBotaoAleatorio() {
   botao.style.draggable = false;      
   botao.style.pointerEvents = "auto";
 
-
   const maxX = window.innerWidth - config.size;
   const maxY = window.innerHeight - config.size;
   let x = Math.floor(Math.random() * maxX);
@@ -74,7 +91,7 @@ function criarBotaoAleatorio() {
   botao.style.left = x + "px";
   botao.style.top = y + "px";
 
-  const velocidadeBase = config.size <= 40 ? 4 : config.size <= 60 ? 3 : 2;
+  const velocidadeBase = config.size <= 40 ? 4 : config.size <= 69 ? 3 : 2;
   velocidadeX = (Math.random() > 0.5 ? 1 : -1) * velocidadeBase;
   velocidadeY = (Math.random() > 0.5 ? 1 : -1) * velocidadeBase;
 
@@ -106,7 +123,6 @@ function animarAlvo() {
     velocidadeY = -velocidadeY;
     novoY = Math.max(0, Math.min(novoY, window.innerHeight - tamanho));
   }
-
 
   elemento.style.left = novoX + "px";
   elemento.style.top = novoY + "px";
@@ -153,10 +169,19 @@ function finalizarJogo(erro = false) {
     msg.textContent = "Clicou fora! Jogo encerrado.";
   } else {
     msg.textContent = `Completou ${rodadasTotais} rodadas.\nTempo total de resposta: ${tempoTotal} ms.`;
+
+  
+    if (tempoTotal < melhorTempoTotal) {
+      melhorTempoTotal = tempoTotal;
+      localStorage.setItem('melhorTempoTotal', tempoTotal);
+    }
+
+    document.getElementById("maior-tempo").textContent = `Melhor tempo: ${melhorTempoTotal} ms`;
   }
 
   document.getElementById("tela-fim").style.display = "block";
 }
+
 
 function cadastrarUsuario() {
   const nome = document.getElementById("nome").value.trim();
@@ -168,7 +193,6 @@ function cadastrarUsuario() {
   mensagem.textContent = "";
   mensagem.className = "";
 
- 
   if (!nome) {
     mensagem.textContent = "O nome é obrigatório.";
     mensagem.className = "mensagem-erro";
@@ -201,14 +225,12 @@ function cadastrarUsuario() {
     return false;
   }
 
-
   usuarios[email] = {
     nome: nome,
     senha: senha
   };
 
   localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
 
   mensagem.textContent = "Cadastro realizado com sucesso!";
   mensagem.className = "mensagem-sucesso";
@@ -220,7 +242,6 @@ function cadastrarUsuario() {
   return false;
 }
 
-
 function fazerLogin() {
   const email = document.getElementById('email').value.trim().toLowerCase();
   const senha = document.getElementById('senha').value;
@@ -228,7 +249,6 @@ function fazerLogin() {
 
   msg.textContent = "";
   msg.style.color = "";
-
 
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
 
@@ -254,13 +274,11 @@ function recuperarSenha() {
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
 
   if (usuarios[email]) {
-
     mensagemEl.innerHTML = `
       Sua senha é: <strong>${usuarios[email].senha}</strong>
     `;
     mensagemEl.className = 'mensagem-sucesso';
   } else {
-
     mensagemEl.textContent = 'E-mail não encontrado.';
     mensagemEl.className = 'mensagem-erro';
   }
