@@ -18,13 +18,18 @@
 
   <div id="tela-inicial">
     <h2 style="font-size: 40px; margin-bottom: 80px;">Jogo de Reflexo</h2>
-    <label for="dificuldade" style="margin-bottom: 60px; margin-top: -40px;">Escolha a dificuldade:</label>
+    <label for="dificuldade" style="margin-bottom: 30px; margin-top: -40px;">Escolha a dificuldade:</label>
     <select style="margin-bottom: 40px;" id="dificuldade">
       <option value="3">Fácil (3 rodadas)</option>
       <option value="5">Médio (5 rodadas)</option>
       <option value="10">Difícil (10 rodadas)</option>
     </select>
-    <button class="btn2" style="color:black; font-weight: bold;" onclick="iniciarJogo()">Iniciar Jogo</button>
+    <button class="btn2" style="color:black; font-weight: bold;margin-bottom: 20px;" onclick="iniciarJogo()">Iniciar Jogo</button>
+    <button class="btn2" style="color:black; font-weight: bold;" id="btn-placar">Melhor tempo</button>
+    <div id="placar">
+      <p id="maior-tempo"></p>
+    </div>
+
     <a href="index.html" style="font-weight: 50px;" class="link-voltar">← Voltar</a>
   </div>
 
