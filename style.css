@@ -262,6 +262,27 @@ label {
   text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
 }
 
+#placar {
+  display: none;
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+}
+
+#btn-placar:hover + #placar {
+  display: block;
+}
+
+
 @media (max-width: 480px) {
   .login-box, #tela-inicial, #tela-fim {
     padding: 30px 20px;
